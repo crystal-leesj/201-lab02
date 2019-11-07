@@ -1,0 +1,19 @@
+body {
+    text-align: center;
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    background-color: #e6bc83;
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+}
+
+#selfIntroduce {
+    width: 40%;
+}
+
+ul {
+    list-style-type: circle;
+    text-align: left;
+};
