@@ -1,5 +1,10 @@
 'use strict';
 
+var userName = prompt('Hello, what is your name?');
+// console.log('User name : ', userName);
+
+alert('Nice to meet you, ' + userName + '!');
+
 function guessingGame() {
     var correctAnswer = 0;
 
@@ -83,6 +88,6 @@ function guessingGame() {
         console.log('Not an option.');
     }
 
-    alert('You got total of ' + correctAnswer + ' answers right!' );
+    alert(userName + ' got total of ' + correctAnswer + ' answers right!' );
     document.getElementById('correctAnswerNum').innerHTML = correctAnswer + '/5';
 }
