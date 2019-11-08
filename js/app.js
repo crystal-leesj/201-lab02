@@ -5,6 +5,8 @@ var userName = prompt('Hello, what is your name?');
 
 alert('Hello, pleasure to meet you, ' + userName + '!');
 
+var totalCorrectAnswerNum = 0;
+
 // eslint-disable-next-line no-unused-vars
 function guessingGame() {
   var correctAnswer = 0;
@@ -91,6 +93,7 @@ function guessingGame() {
 
   alert(userName + ' got total of ' + correctAnswer + ' answers right!' );
   document.getElementById('correctAnswerNum').innerHTML = correctAnswer + '/5';
+  totalCorrectAnswerNum += correctAnswer;
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -102,6 +105,7 @@ function guessMyFavNum() {
     var userAnswer = prompt('What is my favorite number? Choose 1 - 10. Use only Arabic numerals!');
     if (userAnswer === myNum) {
       alert('You got it!');
+      totalCorrectAnswerNum++;
       break;
     }
     else if (userAnswer === null || userAnswer === '') {
@@ -125,22 +129,32 @@ function guessMyFavNum() {
 // eslint-disable-next-line no-unused-vars
 function guessMyCoffee() {
   var allowedAttempts = 6;
-  var coffees = ['americano', 'drip', 'macchiato', 'mocha'];
+  var coffees = ['americano', 'drip', 'macchiato', 'cold brew'];
 
-  for (var i = 0; i < coffees.length; i++) {
-    var userAnswer = prompt('What would be my go to coffee drink?');
-    userAnswer = userAnswer.toLowerCase();
+  while (allowedAttempts > 0) {
+    var flag = false;
+    for (var i = 0; i < coffees.length; i++) {
+      var userAnswer = prompt('What would be my go to coffee drink?');
+      userAnswer = userAnswer.toLowerCase();
+      if (coffees[i] === userAnswer) {
+        alert('Yes, ' + coffees[i] + ' is my go to coffee drink.');
+        totalCorrectAnswerNum++;
+        flag = true;
+        break;
+      }
+      else if (coffees[i] !== userAnswer) {
+        alert('Wrong answer. You got ' + (allowedAttempts-1) + ' attempts left');
+        break;
+      }
+    }
+    allowedAttempts--;
     if (allowedAttempts === 0) {
       alert('You used all your chances...');
-      alert('The answer was either americano or drip or macchiato or mocha');
+      alert('The answer was either americano or drip or macchiato or cold brew');
     }
-    if (coffees[i] === userAnswer) {
-      alert('Yes, ' + coffees[i] + ' is my go to coffee drink.');
+    if (flag === true) {
       break;
     }
-    else {
-      alert('Keep try');
-      allowedAttempts -= 1;
-    }
   }
+  document.getElementById('totatlCorrectAnswerNum').innerHTML = 'The Total Correct Answer : ' + totalCorrectAnswerNum + '/7';
 }
