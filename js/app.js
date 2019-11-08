@@ -158,8 +158,3 @@ function guessMyDrink() {
   }
   document.getElementById('totatlCorrectAnswerNum').innerHTML = 'The Total Correct Answer : ' + totalCorrectAnswerNum + '/7';
 }
-
-// // eslint-disable-next-line no-unused-vars
-// function showTotalNumber() {
-//   document.getElementById('totatlCorrectAnswerNum').innerHTML = 'The Total Correct Answer : ' + totalCorrectAnswerNum + '/7';
-// }
