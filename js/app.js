@@ -3,7 +3,7 @@
 var userName = prompt('Hello, what is your name?');
 // console.log('User name : ', userName);
 
-alert('Nice to meet you, ' + userName + '!');
+alert('Hello, pleasure to meet you, ' + userName + '!');
 
 var totalCorrectAnswerNum = 0;
 
@@ -127,7 +127,7 @@ function guessMyFavNum() {
 }
 
 // eslint-disable-next-line no-unused-vars
-function guessMyDrink() {
+function guessMyCoffee() {
   var allowedAttempts = 6;
   var coffees = ['americano', 'drip', 'macchiato', 'cold brew'];
 
